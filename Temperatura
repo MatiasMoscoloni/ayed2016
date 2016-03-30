@@ -1,0 +1,12 @@
+public class Temperatura {
+	public static int calcularCelsius (int x ){
+		x = x - 32;
+		x = x * 5;
+		x = x / 9;
+		return x;
+	}
+	public static void main(String[] args){ // declaro el metodo que recibe un string
+		Integer x = Integer.parseInt(args[0]); // convierto el strinkg recibido (60) en un integer
+		System.out.print(calcularCelsius(x)); // imprimo el metodo 
+	}
+}

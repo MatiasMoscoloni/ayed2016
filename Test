@@ -1,0 +1,38 @@
+package Practica2;
+
+public class Test {
+	public static void main (String[] args) {
+		Estudiante[] estArray = new Estudiante[5];
+		Profesor[] profArray = new Profesor[4];
+		estArray [0] = new Estudiante();
+		estArray [0].nombre = "Luciano";
+		estArray [0].apellido = "Martinez";
+		estArray [0].comision = 1;
+		estArray [0].email = "llmartinez";
+		estArray [0].direccion = "calle 12";
+		estArray [1] = new Estudiante();
+		estArray [2] = new Estudiante();
+		estArray [3] = new Estudiante();
+		estArray [4] = new Estudiante();
+		LeerEst(estArray);
+		
+		profArray [0] = new Profesor();
+		profArray [1] = new Profesor();
+		profArray [2] = new Profesor();
+		profArray [3] = new Profesor();
+		LeerProf(profArray);
+		
+	}
+	
+	public static void LeerEst (Estudiante[] estArray) {
+		for (int i=0; i< estArray.length; i++) {
+			estArray[i].tusDatos();
+		}
+	}
+	
+	public static void LeerProf (Profesor[] profArray) {
+		for (int i=0; i< profArray.length; i++) {
+			profArray[i].tusDatos();
+		}
+	}
+}

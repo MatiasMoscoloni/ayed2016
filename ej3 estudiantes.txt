@@ -1,0 +1,82 @@
+import java.util.Scanner;
+
+
+public class Ej3_Estudiante {
+	private String nombre;
+	private String apellido;
+	private int comision;
+	private String email;
+	private String direccion;
+	
+	
+	
+	
+	public String getApellido() {
+		return apellido;
+	}
+	public void setApellido(String apellido) {
+		this.apellido = apellido;
+	}
+	public int getComision() {
+		return comision;
+	}
+	public void setComision(int comision) {
+		this.comision = comision;
+	}
+	public String getEmail() {
+		return email;
+	}
+	public void setEmail(String email) {
+		this.email = email;
+	}
+	public String getDireccion() {
+		return direccion;
+	}
+	public void setDireccion(String direccion) {
+		this.direccion = direccion;
+	}
+	
+	public String getNombre() {
+		return nombre;
+	}
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
+	}
+	public Ej3_Estudiante(String nombre, String apellido, int comision, String email, String direccion) {
+		super();
+		this.nombre = nombre;
+		this.apellido = apellido;
+		this.comision = comision;
+		this.email = email;
+		this.direccion = direccion;
+	}
+	public Ej3_Estudiante() {
+		super();
+	}
+	public static void main(String[] args) {
+		
+	}
+	public static Ej3_Estudiante CargarDatos() {
+		Scanner s = new Scanner(System.in);
+		Ej3_Estudiante c = new Ej3_Estudiante();
+		System.out.println("Ingresar Nombre");
+		c.setNombre(s.nextLine());
+		System.out.println("Ingresar Appelido");
+		c.setApellido(s.nextLine());
+		System.out.println("Ingresar email");
+		c.setEmail(s.nextLine());
+		System.out.println("Ingresar dirección");
+		c.setDireccion(s.nextLine());
+		System.out.println("Ingresar Comicion");
+		c.setComision(s.nextInt());
+		return c;
+		}
+	public static void tusDatos(Ej3_Estudiante c){
+		System.out.println(c.getNombre());
+		System.out.println(c.getApellido());
+		System.out.println(c.getComision());
+		System.out.println(c.getEmail());
+		System.out.println(c.getDireccion());
+	}
+
+}

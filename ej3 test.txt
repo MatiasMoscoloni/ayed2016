@@ -1,0 +1,22 @@
+public class Ej3_Test {
+	public static void main(String[] args){
+		Ej3_Estudiante [] estudiantes = new Ej3_Estudiante [5];
+		Ej3_Profesor [] profesores = new Ej3_Profesor [4];
+		for (int i=0; i<5; i++){
+			System.out.println("Ingrese los datos de un estudiante");
+			estudiantes [i] = Ej3_Estudiante.CargarDatos();// new Estudiante(s.nextInt(),s.nextString(),   ) OTRA FORMA DE HACERLO.
+		}
+		for (int i=0; i <=3; i++){
+			System.out.println("Ingrese los datos de un profesor");
+
+			profesores [i] = Ej3_Profesor.CargarDatos();
+		}
+		for (int i=0; i<=4; i++){
+			Ej3_Estudiante.tusDatos(estudiantes [i]);
+		}
+		for (int i=0; i<= 3; i++){
+			Ej3_Profesor.tusDatos(profesores [i]);
+		}
+	}
+
+}

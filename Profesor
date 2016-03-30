@@ -1,0 +1,77 @@
+package Practica2;
+
+public class Profesor {
+	String nombre;
+	String apellido;
+	int edad;
+	String email;
+	String catedra;
+	String titulo;
+	String facultad;
+
+	public String getNombre() {
+		return nombre;
+	}
+
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
+	}	
+	
+	public String getApellido() {
+		return apellido;
+	}
+
+	public void setApellido(String apellido) {
+		this.apellido = apellido;
+	}
+	
+	public int getEdad() {
+		return edad;
+	}
+
+	public void setEdad(int edad) {
+		this.edad = edad;
+	}
+
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+	
+	public String getCatedra() {
+		return catedra;
+	}
+
+	public void setCatedra(String catedra) {
+		this.catedra = catedra;
+	}
+	
+	public String getTitulo() {
+		return titulo;
+	}
+
+	public void setTitulo(String titulo) {
+		this.titulo = titulo;
+	}
+	
+	public String getFacultad() {
+		return facultad;
+	}
+
+	public void setFacultad(String facultad) {
+		this.facultad = facultad;
+	}
+	
+	public void tusDatos() {
+		System.out.println(this.getNombre());
+		System.out.println(this.getApellido());
+		System.out.println(this.getEdad());
+		System.out.println(this.getEmail());
+		System.out.println(this.getCatedra());
+		System.out.println(this.getTitulo());
+		System.out.println(this.getFacultad());
+	}
+}

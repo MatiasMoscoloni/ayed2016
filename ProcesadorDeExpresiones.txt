@@ -1,0 +1,19 @@
+package tp04.ejercicio1;
+import practica3.*;
+public class ProcesadorDeExpresiones {
+       public static ArbolBinario <Character> convertirPostfija (String expresionAritmetica){
+          ArbolBinario<Character> arbol = null;  // declaras el arbol en null
+          PilaGenerica <ArbolBinario <Character>> p = new   PilaGenerica <ArbolBinario <Character>> (); // pila porque va a apilar o desapilar segun lo que sea operador o operando 
+          for (int i = 0; i  < expresionAritmetica.length(); i ++){ // recorres la palabra
+        	  Character c = expresionAritmetica.charAt(i);  // guarda el caracter de la posicion indicada te quedas con una letra (un mas o una letra lo q sea)
+        	  arbol = new ArbolBinario <Character> (c);
+              if ( (c == '+') || (c == '-') || (c == '/') || (c == '*' )){ // es operador es un mas o algo eso que se encuentra dentro del nodo te puede tocar cualquiera de las 2 cosas
+            	  arbol.agregarHijoDerecho(p.desapilar()); // toma el caracter para hacer la cuenta y desapilo lo qhabia antes en ese lugar y eso q desapilas se lo agregas como hijo
+            	  arbol.agregarHijoIzquierdo(p.desapilar());
+              }
+              p.apilar(arbol); // lo apila porque no es un operador mas ni menos,si no q es una letra 
+          }
+       
+       return (arbol);
+ }
+}

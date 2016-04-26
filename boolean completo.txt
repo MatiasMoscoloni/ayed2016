@@ -1,0 +1,45 @@
+public boolean completo() {
+		ArbolBinario<T> arbol;
+		ColaGenerica < ArbolBinario <T> > cola = new ColaGenerica< ArbolBinario <T> >();
+		boolean completos=true;
+		cola.encolar(this);
+		int cant_nodos=0;
+		boolean noteniahd=false;
+		cola.encolar(null);
+		int nivel= 0;
+		while (!cola.esVacia() && completos ) {
+			arbol=cola.desencolar();
+			if (arbol==null){  // si es asi termino el nivel
+				nivel ++;
+				if( ! cola.esVacia()){
+					cola.encolar(null);
+				}
+				else {                   // aca saco un elemento del arbol
+					if  ( ! arbol.getHijoIzquierdo().esVacio() && ! arbol.getHijoDerecho().esVacio() && ! noteniahd){
+						cola.encolar(arbol.getHijoIzquierdo());
+						cola.encolar(arbol.getHijoDerecho());
+					} 
+					if ( noteniahd==true){
+						completos=false;
+					}
+					else {
+						if (arbol.getHijoIzquierdo().esVacio() && ! arbol.getHijoDerecho().esVacio() && ! noteniahd ){
+							noteniahd=true; // se activa la variable
+							cola.encolar(arbol.getHijoIzquierdo());
+						} if (noteniahd==true){
+							completos=false;
+						}
+						else {
+							if (! arbol.getHijoIzquierdo().esVacio() && arbol.getHijoDerecho().esVacio() && ! noteniahd ){
+								completos=false;
+							}
+						}
+					}
+				}
+			}
+		}
+		return completos;
+	}
+} // arbol preguntar siempre si es vacio !! no si es null 
+// el completo se completa de izquierda a derecha
+// control i te identan	

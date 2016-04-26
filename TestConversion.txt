@@ -1,0 +1,18 @@
+package tp04.ejercicio1;
+public class TestConversion {
+   public static void main (String []args) {
+	ArbolBinario<Character> arbol;
+    arbol=ProcesadorDeExpresiones.convertirPostfija(args [0]);
+    Postorden(arbol);
+   }  
+    private static  void Postorden(ArbolBinario <Character> arbol){
+    	if(!arbol.getHijoIzquierdo().esVacio()){
+    		Postorden(arbol.getHijoIzquierdo());
+    	}
+        if (!arbol.getHijoDerecho().esVacio()){
+        	Postorden(arbol.getHijoDerecho());
+        }
+        System.out.println(arbol.getDatoRaiz());
+    }
+    
+  }

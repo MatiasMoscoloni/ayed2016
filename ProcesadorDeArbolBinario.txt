@@ -1,0 +1,32 @@
+package tp04.ejercicio1;
+import practica3.*;
+public class ProcesadorDeArbolBinario {
+   private ArbolBinario <Integer> arbol ; 
+   public int sumaElementosProfundidad (int p){
+	   arbol=null;
+	   int nivel=0;
+	   int suma=0;
+	   ColaGenerica <ArbolBinario <Integer> > cola = new ColaGenerica <ArbolBinario <Integer> > ();
+       cola.encolar(arbol);
+       cola.encolar(null);
+       while (!cola.esVacia() &&  nivel < p){
+    	  arbol = cola.desencolar();
+    	  if (arbol == null){
+    		  nivel ++; // porque finalizo el nivel
+    	  if (!arbol.getHijoIzquierdo().esVacio()){
+    		  cola.encolar(arbol.getHijoIzquierdo()); // cola va a ir teniendo los valores de los niveles
+    	  } 
+    	  if (!arbol.getHijoDerecho().esVacio()){
+    		  cola.encolar(arbol.getHijoDerecho());
+              }
+    	  } 
+    }if (! cola.esVacia()){
+    	while ( ! cola.esVacia()){
+    		suma=suma + cola.desencolar().getDatoRaiz();
+    	}
+     return suma;
+    	}
+    }
+       
+   
+}
